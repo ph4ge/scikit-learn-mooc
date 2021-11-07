@@ -65,7 +65,6 @@ all_scores = pd.DataFrame(
 
 # %%
 import matplotlib.pyplot as plt
-import seaborn as sns
 
 all_scores.plot.hist(bins=10, edgecolor="black", density=True, alpha=0.7)
 plt.xlim([0.8, 1.0])
@@ -149,7 +148,7 @@ print(f"The average accuracy is "
       f"{test_score.std():.3f}")
 
 # %% [markdown]
-# We see that this strategy is less optimistic regarding the model statistical
+# We see that this strategy is less optimistic regarding the model generalization
 # performance. However, this is the most reliable if our goal is to make
 # handwritten digits recognition writers independent. Besides, we can as well
 # see that the standard deviation was reduced.

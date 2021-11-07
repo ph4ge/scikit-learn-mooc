@@ -1,3 +1,4 @@
+# coding: utf-8
 # %% [markdown]
 # # 📝 Exercise M2.01
 #
@@ -51,7 +52,7 @@ target = blood_transfusion["Class"]
 # Write your code here.
 
 # %% [markdown]
-# Evaluate the statistical performance of your model by cross-validation with a
+# Evaluate the generalization performance of your model by cross-validation with a
 # `ShuffleSplit` scheme. Thus, you can use
 # [`sklearn.model_selection.cross_validate`](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_validate.html)
 # and pass a [`sklearn.model_selection.ShuffleSplit`](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.ShuffleSplit.html)
@@ -65,11 +66,12 @@ target = blood_transfusion["Class"]
 # As previously mentioned, the parameter `gamma` is one of the parameters
 # controlling under/over-fitting in support vector machine with an RBF kernel.
 #
-# Compute the validation curve
-# (using [`sklearn.model_selection.validation_curve`](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.validation_curve.html))
-# to evaluate the effect of the parameter `gamma`. You can vary its value
-# between `10e-3` and `10e2` by generating samples on a logarithmic scale.
-# Thus, you can use `np.logspace(-3, 2, num=30)`.
+# Evaluate the effect of the parameter `gamma` by using the
+# [`sklearn.model_selection.validation_curve`](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.validation_curve.html) function.
+# You can leave the default `scoring=None` which is equivalent to
+# `scoring="accuracy"` for classification problems. You can vary `gamma`
+# between `10e-3` and `10e2` by generating samples on a logarithmic scale
+# with the help of `np.logspace(-3, 2, num=30)`. 
 #
 # Since we are manipulating a `Pipeline` the parameter name will be set to
 # `svc__gamma` instead of only `gamma`. You can retrieve the parameter name
